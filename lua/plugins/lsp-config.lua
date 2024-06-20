@@ -35,9 +35,21 @@ return {
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.gopls.setup({
+        settings = {
+          gopls = {
+            staticcheck = true
+          }
+        }
+      })
+      lspconfig.basedpyright.setup({})
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},
+  {
+
+  }
 }
